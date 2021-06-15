@@ -8,7 +8,12 @@ The XML include file should be useable read-only.
 
 * MySQL or MariaDB client installation and environment set-up so that the Netprobe will load SQL-Toolkit
 * Default variables in the include file do not include a password for the user and in the general case all should be
-  overriddenwhen attached to a Managed Entity
+  overridden when attached to a Managed Entity
+* Privileges set for the configured user.  The minimum set for a default install is specified here, but if the database or
+  configuration has been changed then this must be adjusted accordingly:
+
+      GRANT PROCESS ON *.* TO `geneos`@`localhost`;
+      GRANT SHOW VIEW ON `geneos_db`.* TO `geneos`@`localhost`;
   
 ## Variables Used:
 
